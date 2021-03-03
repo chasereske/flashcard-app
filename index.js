@@ -1,1 +1,3 @@
-const mongoose = require('mongoose');
+const connectDB = require('./startup/db');
+
+connectDB();
