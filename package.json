@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chasereske/flashcard-app#readme",
   "dependencies": {
+    "config": "^3.3.4",
     "mongoose": "^5.11.18"
   }
 }
