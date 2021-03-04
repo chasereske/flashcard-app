@@ -1,9 +1,12 @@
-const Collection = require('../models/collection');
+const { Collection, validate } = require('../models/collection');
 const express = require('express');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
+        const { error } = validate(req.body);
+        if (error)
+            return res.status(400).send(error);
 
         const collection = new Collection({
             name: req.body.name,
