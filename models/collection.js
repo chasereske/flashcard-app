@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
+const { cardSchema } = require('./card');
 
 const collectionSchema = new mongoose.Schema({
     name: { type: String, required: true, minlength: 2, maxlength: 50 },
     description: { type: String, required: true },
     category: { type: String, required: true, minlength: 2, maxlength: 255 },
+    flashCards: { type: [cardSchema], default: [] },
     dateModified: { type: Date, default: Date.now },
 });
 
