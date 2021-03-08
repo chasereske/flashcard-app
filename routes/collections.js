@@ -1,5 +1,5 @@
 const { Collection, validate } = require('../models/collection');
-const { Card, validate } = require('../models/card');
+const { Card } = require('../models/card');
 const express = require('express');
 const router = express.Router();
 
