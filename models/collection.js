@@ -18,7 +18,7 @@ function validateCollection(collection) {
         description: Joi.string().required(),
         category: Joi.string().min(2).max(255).required(),
     });
-    return schema.validate(product);
+    return schema.validate(collection);
 }
 
 exports.Collection = Collection; 
