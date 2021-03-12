@@ -49,8 +49,11 @@ router.get('/:collectionId/flashcards/:cardId', async (req, res) => {
 });*/
 
 router.post('/:collectionId/flashcards', async (req, res) => { 
+    console.log('Post endpoint hit');
     try {
-    const collection = await Collection.findById(req.params.id);
+        console.log(req);
+    const collection = await Collection.findById(req.params.collectionId);
+    console.log(collection); 
     if (!collection) return res.status(400).send(`The collection with id "${req.params.collectionId}" does not exist.`);
 
     const card = new Card({
