@@ -3,7 +3,7 @@ const { Card, validate } = require('../models/card');
 const express = require('express');
 const router = express.Router();
 
-router.get('/:collectionId/flashCards', async (req, res) => {
+router.get('/:collectionId/flashcards', async (req, res) => {
     try {
         const cards = await Card.find();
         return res.send(cards);
@@ -25,28 +25,6 @@ router.get('/:collectionId/flashcards/:cardId', async (req, res) => {
         return res.status(500).send(`Internal Server Error: ${ex}`);
     }
 });
-
-/*router.post('/:collectionId/flashcards', async (req, res) => {
-    try {
-        const { error } = validate(req.body);
-        if (error)
-            return res.status(400).send(error);
-
-        const card = new Card({
-            category: req.body.category,
-            cardNumber: req.body.cardNumber,
-            question: req.body.question,
-            answer: req.body.answer,
-        });
-
-        await card.save();
-
-        return res.send(card);
-
-    } catch (ex) {
-        return res.status(500).send(`Internal Server Error: ${ex}`);
-    }
-});*/
 
 router.post('/:collectionId/flashcards', async (req, res) => { 
     console.log('Post endpoint hit');

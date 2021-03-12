@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
             name: req.body.name,
             description: req.body.description,
             category: req.body.category,
-            flashCard: [],
+            flashCards: [],
             dateModified: req.body.dateModified
         });
 
